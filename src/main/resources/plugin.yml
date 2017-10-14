@@ -1,0 +1,8 @@
+name: iSkyblock
+version: ${project.version}
+main: me.savvy.iskyblock.ISkyblock
+prefix: iSkyblock
+depend: [Vault]
+authors: [itsSavvy]
+description: The skyblock plugin for you :P
+website: http://github.com/Savvy
