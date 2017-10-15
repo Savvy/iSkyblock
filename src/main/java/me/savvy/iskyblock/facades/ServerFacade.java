@@ -2,5 +2,6 @@ package me.savvy.iskyblock.facades;
 
 public interface ServerFacade {
 
-    public int getId();
+    int getId();
+    String getWorldName();
 }
