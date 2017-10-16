@@ -2,16 +2,21 @@ package me.savvy.iskyblock;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
-public final class ISkyblock extends JavaPlugin {
+public class ISkyblock extends JavaPlugin {
+
+    private static ISkyblock instance;
 
     @Override
     public void onEnable() {
-        // Plugin startup logic
-
+        instance = this;
     }
 
     @Override
     public void onDisable() {
         // Plugin shutdown logic
+    }
+
+    public static ISkyblock getInstance() {
+        return instance;
     }
 }
