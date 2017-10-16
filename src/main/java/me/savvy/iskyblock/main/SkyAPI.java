@@ -1,6 +1,10 @@
 package me.savvy.iskyblock.main;
 
 import org.bukkit.Location;
+import org.bukkit.OfflinePlayer;
+import org.bukkit.entity.Player;
+
+import java.util.UUID;
 
 public class SkyAPI {
 
@@ -8,6 +12,18 @@ public class SkyAPI {
 
     public SkyAPI() {
         instance = this;
+    }
+
+    public boolean hasIsland(UUID playerUUID) {
+        return true;
+    }
+
+    public boolean hasIsland(Player player) {
+        return hasIsland(player.getUniqueId());
+    }
+
+    public boolean hasIsland(OfflinePlayer offlinePlayer) {
+        return hasIsland(offlinePlayer.getUniqueId());
     }
 
     public boolean isWithinIsland(Location location) {
