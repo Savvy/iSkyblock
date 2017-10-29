@@ -1,0 +1,14 @@
+skyblock:
+   serverId: 'serverId' # Must be same server id as specific on bungee network configuration.
+   world:  'void' #Skyblock world (perhaps use world?)
+
+SQL: # MySQL database information (Can also use MariaDb)
+ userName: root
+ password: password
+ databaseName: databaseName
+ hostName: hostName
+ port: 3306
+
+ schematics:
+     "default":
+         permission: 'noneNeeded'

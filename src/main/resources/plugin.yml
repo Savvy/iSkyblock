@@ -6,3 +6,6 @@ depend: [Vault]
 authors: [itsSavvy]
 description: The skyblock plugin for you :P
 website: http://github.com/Savvy
+commands:
+   island:
+     description: Main island command.

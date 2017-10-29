@@ -1,0 +1,11 @@
+name: iSkyblock
+version: 1.0-SNAPSHOT
+main: me.savvy.iskyblock.ISkyblock
+prefix: iSkyblock
+depend: [Vault]
+authors: [itsSavvy]
+description: The skyblock plugin for you :P
+website: http://github.com/Savvy
+commands:
+   island:
+     description: Main island command.

@@ -1,22 +1,43 @@
 package me.savvy.iskyblock;
 
+import lombok.Getter;
+import me.savvy.iskyblock.cmds.CommandRegistry;
+import me.savvy.iskyblock.listeners.BlockEvent;
+import me.savvy.iskyblock.main.ServerSettings;
+import me.savvy.iskyblock.storage.SQLBuilder;
+import me.savvy.iskyblock.storage.enums.DatabaseTables;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class ISkyblock extends JavaPlugin {
 
-    private static ISkyblock instance;
+    @Getter private static ISkyblock instance;
+    @Getter private String schematicFolder;
+    @Getter private SQLBuilder sqlBuilder;
+    @Getter  private ServerSettings serverSettings;
 
     @Override
     public void onEnable() {
         instance = this;
+        saveDefaultConfig();
+        load();
+        getServer().getPluginManager().registerEvents(new BlockEvent(), this);
+    }
+
+    private void load() {
+        serverSettings = new ServerSettings();
+        schematicFolder = getDataFolder() + "/schematics/";
+        sqlBuilder = new SQLBuilder(
+                getConfig().getString("SQL.userName"),
+                getConfig().getString("SQL.password"),
+                getConfig().getString("SQL.port"),
+                getConfig().getString("SQL.databaseName"),
+                getConfig().getString("SQL.hostName"))
+                .executeUpdate(/*DatabaseTables.SERVER.getQuery(), */DatabaseTables.ISLANDS.getQuery());
+        new CommandRegistry().register();
     }
 
     @Override
     public void onDisable() {
-        // Plugin shutdown logic
-    }
-
-    public static ISkyblock getInstance() {
-        return instance;
+        sqlBuilder.closeConnection();
     }
 }
