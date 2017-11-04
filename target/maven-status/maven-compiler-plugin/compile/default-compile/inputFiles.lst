@@ -21,6 +21,7 @@ F:\Intellij - Workspace\iSkyblock\src\main\java\me\savvy\iskyblock\events\Island
 F:\Intellij - Workspace\iSkyblock\src\main\java\me\savvy\iskyblock\main\IslandSettings.java
 F:\Intellij - Workspace\iSkyblock\src\main\java\me\savvy\iskyblock\utils\schematic\SchematicUtils.java
 F:\Intellij - Workspace\iSkyblock\src\main\java\me\savvy\iskyblock\events\IslandCreateWarpEvent.java
+F:\Intellij - Workspace\iSkyblock\src\main\java\me\savvy\iskyblock\bungee\actions\TeleportServerLocationAction.java
 F:\Intellij - Workspace\iSkyblock\src\main\java\me\savvy\iskyblock\facades\GridFacade.java
 F:\Intellij - Workspace\iSkyblock\src\main\java\me\savvy\iskyblock\main\Grid.java
 F:\Intellij - Workspace\iSkyblock\src\main\java\me\savvy\iskyblock\cmds\CommandRegistry.java
@@ -30,3 +31,4 @@ F:\Intellij - Workspace\iSkyblock\src\main\java\me\savvy\iskyblock\storage\enums
 F:\Intellij - Workspace\iSkyblock\src\main\java\me\savvy\iskyblock\events\IslandDeleteWarpEvent.java
 F:\Intellij - Workspace\iSkyblock\src\main\java\me\savvy\iskyblock\events\IslandCreateEvent.java
 F:\Intellij - Workspace\iSkyblock\src\main\java\me\savvy\iskyblock\bungee\Action.java
+F:\Intellij - Workspace\iSkyblock\src\main\java\me\savvy\iskyblock\bungee\actions\TeleportServerAction.java

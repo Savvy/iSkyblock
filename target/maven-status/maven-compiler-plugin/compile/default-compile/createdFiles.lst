@@ -1,5 +1,6 @@
 me\savvy\iskyblock\facades\GridFacade.class
 me\savvy\iskyblock\main\ServerSettings.class
+me\savvy\iskyblock\bungee\actions\TeleportServerAction.class
 me\savvy\iskyblock\bungee\ActionType.class
 me\savvy\iskyblock\ISkyblock.class
 me\savvy\iskyblock\main\Island.class
@@ -19,6 +20,7 @@ me\savvy\iskyblock\events\IslandDeleteWarpEvent.class
 me\savvy\iskyblock\storage\enums\QueryStatements.class
 me\savvy\iskyblock\facades\IslandSettingsFacade.class
 me\savvy\iskyblock\bungee\Action.class
+me\savvy\iskyblock\bungee\actions\TeleportServerLocationAction.class
 me\savvy\iskyblock\runnable\BlockRegenRunnable.class
 me\savvy\iskyblock\cmds\commands\IslandCommand.class
 me\savvy\iskyblock\utils\schematic\Schematic.class

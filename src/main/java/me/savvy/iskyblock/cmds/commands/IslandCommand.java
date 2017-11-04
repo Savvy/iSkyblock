@@ -13,6 +13,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import java.util.List;
+import java.util.UUID;
 
 
 public class IslandCommand extends Command {
@@ -87,16 +88,20 @@ public class IslandCommand extends Command {
                             sender.sendMessage("You don't have a island!");
                             break;
                         }
+                        sender.sendMessage("Reseting your island!");
                         island = SkyAPI.getInstance().getIsland(player.getUniqueId());
-                        Bukkit.broadcastMessage("Starting...");
+                        Bukkit.broadcastMessage(island == null ? "Can't find island" : "Island Found");
                         List<Block> blocksList = ISchematic.getBlocksFromIsland(island, true);
                         if (blocksList.isEmpty()) {
                             SkyAPI.getInstance().generateIsland("temp.schematic", island);
                             break;
                         }
                         ISchematic.resetBlocks(blocksList, island);
+                        sender.sendMessage("Reset complete!");
                         break;
                     default:
+                    case "visit":
+
                         break;
                 }
                 break;

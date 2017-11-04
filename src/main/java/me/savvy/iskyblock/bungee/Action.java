@@ -5,5 +5,6 @@ import org.bukkit.entity.Player;
 public interface Action {
 
     ActionType getType();
-    void execute(Player player);
+    default void execute(Player player) {}
+    default void execute(Player player, Object... objects) {}
 }

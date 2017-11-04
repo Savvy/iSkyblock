@@ -26,11 +26,10 @@ public class Grid implements GridFacade {
                 x++;
             }
         }*/
-      load();
     }
 
-    private void load() {
-        Bukkit.broadcastMessage("Triggered");
+    public void load() {
+        System.out.println("Triggered");
         try {
             PreparedStatement ps = QueryStatements.ISLAND_SELECT.getStatement(ISkyblock.getInstance().getServerSettings().getId());
             ResultSet resultSet = ISkyblock.getInstance().getSqlBuilder().executeQuery(ps);
@@ -96,6 +95,21 @@ public class Grid implements GridFacade {
             for (int col = 0; col < islandGrid[row].length; col++) {
                 if (islandGrid[row][col] != null) {
                     if (islandGrid[row][col].isInIsland(location)) {
+                        return islandGrid[row][col];
+                    }
+                }
+            }
+        }
+        return null;
+    }
+
+
+    @Override
+    public Island getIsland(UUID uuid) {
+        for (int row = 0; row < islandGrid.length; row++) {
+            for (int col = 0; col < islandGrid[row].length; col++) {
+                if (islandGrid[row][col] != null) {
+                    if (islandGrid[row][col].getOwner() == uuid) {
                         return islandGrid[row][col];
                     }
                 }

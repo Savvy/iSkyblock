@@ -30,6 +30,10 @@ public class SkyAPI {
         gridFacade = new Grid();
     }
 
+    public static SkyAPI getInstance() {
+        return (instance == null) ? new SkyAPI() : instance;
+    }
+
     public GridFacade getGridFacade() {
         return gridFacade;
     }
@@ -55,7 +59,8 @@ public class SkyAPI {
     }
 
     public Island getIsland(UUID uniqueId) {
-        for (int row = 0; row < getGridFacade().getIslandGrid().length; row++) {
+        return gridFacade.getIsland(uniqueId);
+        /*for (int row = 0; row < getGridFacade().getIslandGrid().length; row++) {
             for (int col = 0; col < getGridFacade().getIslandGrid()[row].length; col++) {
                 Island island = getGridFacade().getIsland(row, col);
                 if (island != null) {
@@ -64,11 +69,7 @@ public class SkyAPI {
                 }
             }
         }
-        return null;
-    }
-
-    public static SkyAPI getInstance() {
-        return (instance == null) ? new SkyAPI() : instance;
+        return null;*/
     }
 
     public boolean generateIsland(String schematicName, Island island) {
@@ -87,7 +88,7 @@ public class SkyAPI {
             e.printStackTrace();
             return false;
         }
-    }
+    } 
 
     public void sendWorldBorder(Location location, int borderSize) {
         WorldBorder newBorder = new WorldBorder();
@@ -126,6 +127,6 @@ public class SkyAPI {
     }
 
     public String getStringFromLocation(Location loc) {
-        return loc.getWorld().getName() + ":" + loc.getBlockX() + ":" + loc.getBlockY() + ":" + loc.getZ() + ":" + loc.getYaw() + ":" + loc.getPitch();
+        return loc.getWorld().getName() + ":" + loc.getBlockX() + ":" + loc.getBlockY() + ":" + loc.getBlockZ() + ":" + loc.getYaw() + ":" + loc.getPitch();
     }
 }
